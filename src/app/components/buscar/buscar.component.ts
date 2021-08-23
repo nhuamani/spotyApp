@@ -18,7 +18,7 @@ export class BuscarComponent {
   faUsers = faUsers;
   faStar = faStar;
 
-  artistas: any[] = [];
+  resArtists: any[] = [];
 
   constructor(private _spotify: SpotifyService) { }
 
@@ -27,7 +27,7 @@ export class BuscarComponent {
     // console.log(q)
 
     this._spotify.getSearchArtist( q )
-      .subscribe( (data: any) => this.artistas = data )
+      .subscribe( (data: any) => this.resArtists = data )
 
   }
 

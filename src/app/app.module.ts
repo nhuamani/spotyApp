@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { CardComponent } from './components/shared/card/card.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 
 // Routes
@@ -25,6 +26,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    CardComponent,
     BuscarComponent,
     NoimagePipe
   ],

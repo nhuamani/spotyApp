@@ -1,0 +1,35 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+  <div *ngFor="let item of items" class="col">
+
+    <div class="card">
+      <img [src]=" item.images | noimage " class="card-img-top" alt="{{ item.name }}">
+
+      <span class="card-quantity">
+        <!--fa-icon [icon]="faMusic"></!--fa-icon-->
+        {{ item.total_tracks }}
+      </span>
+
+      <div class="card-body">
+        <h2 class="card-title">{{ item.name }}</h2>
+        <div class="card-tags">
+          <a *ngFor="let artista of item.artists" [href]="artista.external_urls.spotify" class="badge rounded-pill bg-success" target="_blank" >
+            <!--fa-icon [icon]="faUser"></!--fa-icon-->
+            {{ artista.name }}
+          </a>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <small class="text-muted">{{ item.release_date | date:'longDate' }}</small>
+        <span class="badge bg-warning">
+          <!--fa-icon *ngIf="item.album_type==='single'; else elseBlock" [icon]="faMicrophone"></!--fa-icon-->
+          <ng-template #elseBlock><!--fa-icon [icon]="faCompactDisc"></!--fa-icon--></ng-template>
+          {{ item.album_type | titlecase }}
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+</div>

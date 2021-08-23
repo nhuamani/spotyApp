@@ -12,23 +12,20 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   faMusic = faMusic;
   faCompactDisc  = faCompactDisc;
   faMicrophone = faMicrophone;
   faUser = faUser;
 
-  albums: any[] = [];
+  newAlbums: any[] = [];
 
   constructor( private _http: HttpClient, private _spotify: SpotifyService ) {
 
     this._spotify.getNewReleases()
-      .subscribe( (data: any) => this.albums = data )
+      .subscribe( (data: any) => this.newAlbums = data )
 
-  }
-
-  ngOnInit(): void {
   }
 
 }
