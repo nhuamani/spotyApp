@@ -17,12 +17,16 @@ import { AppRoutingModule } from './app.routing';
 // Services
 import { SpotifyService } from './services/spotify.service';
 
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    BuscarComponent
+    BuscarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

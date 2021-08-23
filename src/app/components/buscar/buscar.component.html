@@ -8,7 +8,7 @@
   <div *ngFor="let artista of artistas" class="col">
 
     <div class="card">
-      <img [src]="artista.images[0].url" class="card-img-top" alt="{{ artista.name }}">
+      <img [src]=" artista.images | noimage " class="card-img-top" alt="{{ artista.name }}">
 
       <span class="card-quantity">
         <fa-icon [icon]="faStar"></fa-icon>

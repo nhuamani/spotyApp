@@ -5,7 +5,7 @@
   <div *ngFor="let album of albums" class="col">
 
     <div class="card">
-      <img [src]="album.images[0].url" class="card-img-top" alt="{{ album.name }}">
+      <img [src]=" album.images | noimage " class="card-img-top" alt="{{ album.name }}">
 
       <span class="card-quantity">
         <fa-icon [icon]="faMusic"></fa-icon>
