@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // Font Awesome Icons
-import { faMusic, faCompactDisc, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faCompactDisc, faMicrophone, faUser } from '@fortawesome/free-solid-svg-icons';
 
 // Services
 import { SpotifyService } from 'src/app/services/spotify.service';
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   faMusic = faMusic;
   faCompactDisc  = faCompactDisc;
   faMicrophone = faMicrophone;
+  faUser = faUser;
 
   albums: any[] = [];
 
