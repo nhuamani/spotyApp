@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+.section-title {
+  margin: 1.5rem 0 1.5rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #2dd280;
+    bottom: -6px;
+    left: 0;
+  }
+
+  &::after {
+    left: 10px;
+    bottom: -6px;
+    transform: scale(.7);
+  }
+}
+
+.card {
+
+  &-quantity {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    color: #FFD72C;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    right: .5rem;
+    top: .5rem;
+  }
+
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-size: 1rem;
+
+    & a, span {
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+      white-space: nowrap;
+      margin-right: .5rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: #2ebd75;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.badge {
+  font-weight: normal;
+  margin: .2rem 0;
+
+  &.bg-success {
+    background-color: rgba(94, 216, 97, .3) !important;
+    color: #2ebd75;
+  }
+
+  &.bg-warning {
+    background-color: rgb(255, 194, 43, .9) !important;
+    color: rgba(0, 0, 0, .7);
+  }
+
+}

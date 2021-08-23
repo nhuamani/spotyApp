@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { faCompactDisc, faMusic, faGuitar, faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
+
+// Services
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-buscar',
@@ -6,11 +10,28 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class BuscarComponent implements OnInit {
+export class BuscarComponent {
 
-  constructor() { }
+  faMusic = faMusic;
+  faCompactDisc  = faCompactDisc;
+  faGuitar = faGuitar;
+  faUsers = faUsers;
+  faStar = faStar;
 
-  ngOnInit(): void {
+  artistas: any[] = [];
+
+  constructor(private _spotify: SpotifyService) { }
+
+  buscarArtista(q: string) {
+
+    console.log(q)
+
+    this._spotify.getSearchArtist( q )
+      .subscribe( (data: any) => {
+        console.log(data.artists.items)
+        this.artistas = data.artists.items
+      });
+
   }
 
 }
