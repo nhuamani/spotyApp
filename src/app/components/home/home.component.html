@@ -1,3 +1,39 @@
 <h1 class="section-title">Nuevas publicaciones</h1>
 
-<app-card [items]="newAlbums"></app-card>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+  <div *ngFor="let album of newAlbums" class="col">
+
+    <div class="card">
+
+      <img [src]=" album.images | noimage " class="card-img-top" alt="{{ album.name }}">
+
+      <span class="card-quantity">
+        <fa-icon [icon]="faMusic"></fa-icon>
+        {{ album.total_tracks }}
+      </span>
+
+      <div class="card-body">
+        <h2 class="card-title">{{ album.name }}</h2>
+        <div class="card-tags">
+          <a *ngFor="let artista of album.artists" [href]="artista.external_urls.spotify" class="badge rounded-pill bg-success" target="_blank" >
+            <fa-icon [icon]="faUser"></fa-icon>
+            {{ artista.name }}
+          </a>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <small class="text-muted">{{ album.release_date | date:'longDate' }}</small>
+        <span class="badge bg-warning">
+          <fa-icon *ngIf="album.album_type==='single'; else elseBlock" [icon]="faMicrophone"></fa-icon>
+          <ng-template #elseBlock><fa-icon [icon]="faCompactDisc"></fa-icon></ng-template>
+          {{ album.album_type | titlecase }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
